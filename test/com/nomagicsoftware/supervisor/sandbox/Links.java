@@ -35,6 +35,7 @@ public class Links
         
     }
     
+    @Deprecated
     public void singleService() throws Exception
     {
         MockSupervisedService service = new MockSupervisedService();
@@ -51,22 +52,10 @@ public class Links
         assertTrue("", allStopped.isDone());
     }
     
-    /**
-     * OK, we could define a CF per each service, and have each TDC simply complete its respective
-     * future
-     */
-    //@Test
-    public void anotherApproach()
-    {
-        CompletableFuture<Boolean> serviceDead1 = new CompletableFuture<>();
-        CompletableFuture<Boolean> serviceDead2 = new CompletableFuture<>();
-        
-        
-        
-    }
+    
     
     @Test
-    public void smarter() throws Exception
+    public void unmanagedLink() throws Exception
     {
         /*
             so each TDC should do the following:
