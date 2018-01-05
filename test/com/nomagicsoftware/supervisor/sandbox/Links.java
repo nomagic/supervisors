@@ -130,6 +130,7 @@ public class Links
         
         
         Integer done = link.get();
+        assertEquals("", 0, (int) done);
         
         Executor sameThread = Runnable::run;
         Timer t;
