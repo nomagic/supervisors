@@ -121,8 +121,8 @@ public class Links
         Integer done = link.get();
         assertEquals("", 0, (int) done);
         
-        Executor sameThread = Runnable::run;
-        Timer t;
+        //Executor sameThread = Runnable::run;
+        //Timer t;
         
     }
     
@@ -142,11 +142,12 @@ public class Links
         @Override
         public void stop()
         {
-            if (! this.shutdown) 
-            {
-                this.shutdown = true; //crucial to avoid infinite loop
-                
-            }
+//            if (! this.shutdown) 
+//            {
+//                this.shutdown = true; //crucial to avoid infinite loop
+//                
+//            }
+            this.shutdown = true;
             
         }
 
