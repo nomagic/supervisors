@@ -5,15 +5,10 @@ import com.nomagicsoftware.event.DeathState;
 import com.nomagicsoftware.event.SupervisedService;
 import com.nomagicsoftware.function.Functions;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
-import java.util.Timer;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Executor;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
-import java.util.stream.Stream;
 import static org.junit.Assert.*;
 import org.junit.Test;
 /**
@@ -34,7 +29,7 @@ public class Links
         
         
     }
-    
+   
     @Deprecated
     public void singleService() throws Exception
     {
@@ -54,8 +49,9 @@ public class Links
     
     
     
+   
     @Test
-    public void unmanagedLink() throws Exception
+    public void unmanaged() throws Exception
     {
         /*
             so each TDC should do the following:
@@ -121,8 +117,7 @@ public class Links
         Integer done = link.get();
         assertEquals("", 0, (int) done);
         
-        //Executor sameThread = Runnable::run;
-        //Timer t;
+        
         
     }
     
@@ -148,6 +143,8 @@ public class Links
 //                
 //            }
             this.shutdown = true;
+            
+            
             
         }
 
